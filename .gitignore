@@ -1,0 +1,16 @@
+test/
+
+/init-db
+/update-cache
+/write-tree
+/commit-tree
+/read-tree
+/cat-file
+/show-diff
+
+*.o
+
+.DS_store
+Thumbs.db
+*~
+*.swp
