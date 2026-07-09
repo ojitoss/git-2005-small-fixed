@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <errno.h>
+#include <unistd.h>
 #include <sys/mman.h>
 
 #include <openssl/sha.h>

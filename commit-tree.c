@@ -106,9 +106,9 @@ int main(int argc, char **argv)
 	int parents = 0;
 	unsigned char tree_sha1[20];
 	unsigned char parent_sha1[MAXPARENT][20];
-	char *gecos, *realgecos;
+	char *gecos, *realgecos = NULL;
 	char *email, realemail[1000];
-	char *date, *realdate;
+	char *date, *realdate = NULL;
 	char comment[1000];
 	struct passwd *pw;
 	time_t now;
@@ -142,9 +142,9 @@ int main(int argc, char **argv)
 	email = getenv("COMMITTER_EMAIL") ? : realemail;
 	date = getenv("COMMITTER_DATE") ? : realdate;
 
-	remove_special(gecos); remove_special(realgecos);
+	/*remove_special(gecos); remove_special(realgecos);
 	remove_special(email); remove_special(realemail);
-	remove_special(date); remove_special(realdate);
+	remove_special(date); remove_special(realdate);*/
 
 	init_buffer(&buffer, &size);
 	add_buffer(&buffer, &size, "tree %s\n", sha1_to_hex(tree_sha1));

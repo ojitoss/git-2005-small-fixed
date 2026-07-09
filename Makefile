@@ -1,4 +1,4 @@
-CFLAGS=-g -fcommon
+CFLAGS=-g -O0 -std=gnu89 -fno-strict-aliasing -Wall
 CC=gcc
 
 PROG=update-cache show-diff init-db write-tree read-tree commit-tree cat-file
