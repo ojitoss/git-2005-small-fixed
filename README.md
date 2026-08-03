@@ -4,7 +4,7 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 
 **This repository it's just for those curious about trying out this old version of Git.**
 
-*real "README" file created for ```Linus``` since 2005, was the [README](https://github.com/ojitoss/git-2005-small-fixed) file in this same repository.
+*real "README" file created for ```Linus``` since 2005, was the [README](./README) file in this same repository.*
 
 ## Small chances was maked:
 
