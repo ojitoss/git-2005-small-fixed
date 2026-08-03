@@ -7,7 +7,6 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 *real "README" file created for ```Linus``` since 2005, was the [README](./README) file in this same repository.*
 
 ## Small chances was maked:
-
 **Files added:** 
 - ```.gitignore``` just to ignore the files than compiler create and some posibles editor or systems temp files.
 - ```README.md``` this file, is just to clarify than the code isn't mine, and the changes was maked.
@@ -26,3 +25,18 @@ In this point yo can move the executable files to your bin folder to can execute
 
 ## Commands guide:
 Since the original version of git, the README don't had info about how use it (was only internals and desing to the future VCS/SMC), this is the guide of how use every command, considerations and some curiosities against current git.
+
+### ```init-db```
+#### Why is this command?
+This command is the ancestor of ```git init``` command, had the same fuction of just make hidden folder with the info of the repo and objects.
+
+### Usage
+```sh
+./init-db
+```
+No had any parameters
+
+### Considerations and curiosities
+1. The folder if this version, no had ```.git``` name, instead was called as ```.dircache```
+2. This only create the ```objects``` folder and ```index``` file.
+3. The ```objects``` folder create the 255 folders inside when executed the command (names in hexa of groups of four bits like 00..ff), instead like current git, than make this folders as lazy when hash objects was generated. *I guess this is just because Linus want a funcional MVP and not add lazy instructions in the other commands*
