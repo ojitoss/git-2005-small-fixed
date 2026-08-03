@@ -21,4 +21,8 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 ```sh
 git clone https://github.com/ojitoss/git-2005-small-fixed && cd git-2005-small-fixed && make
 ```
+
 In this point yo can move the executable files to your bin folder to can execute globaly, but also was added (and ignored by .gitignore) the ```test``` folder if you don't want hace it globaly because only want test it a bit. (of curse, remember to use the relative path if use the ```test``` folder, like: ```./../init-db```)
+
+## Commands guide:
+Since the original version of git, the README don't had info about how use it (was only internals and desing to the future VCS/SMC), this is the guide of how use every command, considerations and some curiosities against current git.
