@@ -88,3 +88,25 @@ No had any parameters
 ### Considerations and curiosities
 1. This not create a commit itself, this only create and "return" they tree hash, to create a commit you could be use after this, the ```commit-tree``` command.
 2. This based to the fs than staging area was based, so you can't make like now, creating a virtual index and orphan object.
+
+### commit-tree
+#### Why is this command?
+This command is the ancestor of ```git commit``` command, had the same fuction of create a object of **commit** type.
+
+### Usage
+```sh
+echo <message> | ./commit-tree <tree-hash> [-p <tree-hash>]
+```
+- ```message```: was not necesary itself to use the pipe, but without this, the commit object had a empty description.
+- ```tree-hash```: this arg is used to set the tree object to the commit was target about.
+- ```parent```: this flag target and add to the commit a parent prop.
+  - ```tree-hash```: this sub-arg was to indicate was hash was a parent of this commit.
+
+### Considerations and curiosities
+1. You need to set a global env or shell variables before use this command:
+```sh
+set GIT_AUTHOR=<name>
+set GIT_EMAIL=<email>
+```
+2. Of follow a current "block-chain" than git has with commits, you may a put **manualy** the parent prop in every commit of the last commit hash.
+3. A commit can target of any **tree** object and not only last tree created with ```write-tree```
