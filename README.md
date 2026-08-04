@@ -124,3 +124,18 @@ This command is the ancestor of ```git cat-file``` command, had the same fuction
 ### Considerations and curiosities
 1. Against current cat-file command, not throw content directly, the original create a file with this structure as name: ```temp_git_file_XXXXXX``` and you be see it with a ```cat``` command or variants of file readers.
 2. This files was never cleaned for git, you could be manualy, remove it, preference use: ```rm -rf temp_git_file_*``` to remove all with one command.
+
+### read-tree
+#### Why is this command?
+This command is the ancestor of ```git ls-tree``` command, had the same fuction of display a structure of, name, permiss, and blob hash of the tree fields.
+
+### Usage
+```sh
+./read-tree <tree-hash>
+```
+- ```tree-hash```: this arg refer to the hash of the tree you can check.
+
+### Considerations and curiosities
+1. Instead of ```cat-file``` command, this command show in console directly.
+2. the structure of how show it is:
+```[file permiss] [name file and root] ([blob hash])```
