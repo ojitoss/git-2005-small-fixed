@@ -192,6 +192,17 @@ tree <size in ASCII>\0(List of files root info, had this format:
 <permission[6 chars]> <file root> <blob hash[40 chars]
 )
 ```
+example of this directory:
+```
+hello.md -> "hello" (content)
+world.md -> "world"
+```
+to
+```
+100600 hello.md abfc5baa.....
+100600 world.md bbfac16c.....
+```
+
 #### Commit 
 - **Creator**: [commit-tree](#commit-tree)
 - **Content**: Target to the tree, the parents, info about author and commit msg.
