@@ -160,3 +160,8 @@ The [README](./README) file of Linus Torvalds, was focused in the desing itself 
     [two chars in hexa]/     # The first byte or two firts chars, create a 255 folders
        [38 other hexa chars] # The rest of chars to form one file (loose object)
 ```
+
+### Objects Types
+- **Blobs**: When you add a file to staging area with [update-cache](#update-cache), create a this type of object than contains tye entery content of the file.
+- **Trees**: When you use [write-tree](#write-tree) command, use the current staging area to create this type of object than contains a list of every file, his root (not name, because in this version only create a tree object in root directory and not sub-trees) his permissions and blob hash.
+- **Commit**: When you use [commit-tree](#commit-tree) command, use the tree object passed as first arg and (if pass it) a parent prop (in this version can only contain one parent), also had a info about author, date, and message description.
