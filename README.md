@@ -148,3 +148,15 @@ This command is the ancestor of ```git ls-tree``` command, had the same fuction 
 1. Instead of [cat-file](#cat-file) command, this command show in console directly.
 2. the structure of how show it is:
 ```[file permiss] [name file and root] ([blob hash])```
+
+## Internals
+The [README](./README) file of Linus Torvalds, was focused in the desing itself of the internals, not mention or focuss in practic uses of the internals, so this is the practice uses about it.
+
+### Folder DB structure
+```
+.dircache/                   # Folder db name
+  index                      # Staging area
+  objects/                   # Folder of than contain in binary files (compress with zlib)  
+    [two chars in hexa]/     # The first byte or two firts chars, create a 255 folders
+       [38 other hexa chars] # The rest of chars to form one file (loose object)
+```
