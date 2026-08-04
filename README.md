@@ -1,5 +1,7 @@
 # Git first version (un official) repo
 
+*DISCLAIMER: The original repository of Linus Torvalds, don't contain a LICENSE file, so i can't put a LICENSE, bit was Open source anyway and i add this to avoid any kind of "license troll"*
+
 This repository is just a fixed version of [First commit of git by Linus Torvalds 2005 7 April](https://github.com/git/git/tree/e83c5163316f89bfbde7d9ab23ca2e25604af290) to this first system of the old git can works with current compilers (GCC and Make). 
 
 **This repository it's just for those curious about trying out this old version of Git.**
