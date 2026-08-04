@@ -110,3 +110,17 @@ set GIT_EMAIL=<email>
 ```
 2. Of follow a current "block-chain" than git has with commits, you may a put **manualy** the parent prop in every commit of the last commit hash.
 3. A commit can target of any **tree** object and not only last tree created with ```write-tree```
+
+### cat-file
+#### Why is this command?
+This command is the ancestor of ```git cat-file``` command, had the same fuction of display a content of a object storage in ```.dircache/objects/```.
+
+### Usage
+```sh
+./cat-file <object-hash>
+```
+- ```object-hash```: this arg you pass the commit of a EXISTING object in your dircache.
+
+### Considerations and curiosities
+1. Against current cat-file command, not throw content directly, the original create a file with this structure as name: ```temp_git_file_XXXXXX``` and you be see it with a ```cat``` command or variants of file readers.
+2. This files was never cleaned for git, you could be manualy, remove it, preference use: ```rm -rf temp_git_file_*``` to remove all with one command.
