@@ -179,4 +179,16 @@ tree <size in ASCII>\0(List of files root info, had this format:
 <permission[6 chars]> <file root> <blob hash[40 chars]
 )
 ```
-- **Commit**: When you use [commit-tree](#commit-tree) command, use the tree object passed as first arg and (if pass it) a parent prop (in this version can only contain one parent), also had a info about author, date, and message description.
+#### Commit 
+- **Command than create it**: [commit-tree](#commit-tree)
+- **Why contains**: Target to the tree, the parents, info about author and commit msg.
+- **Structure in dircache**:
+```
+commit <size in ASCII>\0tree <hash[40 chars]>
+(list of parents with this structure:
+parent <hash[40 chars]
+)
+author <author-name> <<author-email>> <date>
+commiter <commiter-name> <<commiter-email> <date>
+<message>
+```
