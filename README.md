@@ -58,7 +58,7 @@ This command is the ancestor of ```git add <file>``` command, had the same fucti
 ```sh
 ./update-cache <file>
 ```
-- ```file:``` This argument was to (based in your current directory) add a specific file to staging area.
+- ```file```: This argument was to (based in your current directory) add a specific file to staging area.
 
 ### Considerations and curiosities
 1. Can't use '.' in ```file``` arg to save every file in the directory to the staging area.
@@ -82,7 +82,7 @@ No had any parameters
   - ```state```: this could be had two values:
     - ```Ok```: this means the file was correclty added and prepare to commit write a tree.
     - ```[rare bytes sequence]```: this meaning the file was not added to the staging area.
-2. Don't use this command if you don't add a file with ```update-cache``` command before, because this corrupt the index and when re execute this command or update command, throw an error.
+2. Don't use this command if you don't add a file with [update-cache](#update-cache) command before, because this corrupt the index and when re execute this command or update command, throw an error.
 
 ### write-tree
 #### Why is this command?
@@ -95,7 +95,7 @@ This command is the ancestor of ```git commit``` in normal use, but as exact anc
 No had any parameters
 
 ### Considerations and curiosities
-1. This not create a commit itself, this only create and "return" they tree hash, to create a commit you could be use after this, the ```commit-tree``` command.
+1. This not create a commit itself, this only create and "return" they tree hash, to create a commit you could be use after this, the [commit-tree](#commit-tree) command.
 2. This based to the fs than staging area was based, so you can't make like now, creating a virtual index and orphan object.
 
 ### commit-tree
@@ -118,7 +118,7 @@ set GIT_AUTHOR=<name>
 set GIT_EMAIL=<email>
 ```
 2. Of follow a current "block-chain" than git has with commits, you may a put **manualy** the parent prop in every commit of the last commit hash.
-3. A commit can target of any **tree** object and not only last tree created with ```write-tree```
+3. A commit can target of any **tree** object and not only last tree created with [write-tree](#write-tree)
 
 ### cat-file
 #### Why is this command?
@@ -145,6 +145,6 @@ This command is the ancestor of ```git ls-tree``` command, had the same fuction 
 - ```tree-hash```: this arg refer to the hash of the tree you can check.
 
 ### Considerations and curiosities
-1. Instead of ```cat-file``` command, this command show in console directly.
+1. Instead of [cat-file](#cat-file) command, this command show in console directly.
 2. the structure of how show it is:
 ```[file permiss] [name file and root] ([blob hash])```
