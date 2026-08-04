@@ -74,3 +74,17 @@ No had any parameters
     - ```Ok```: this means the file was correclty added and prepare to commit write a tree.
     - ```[rare bytes sequence]```: this meaning the file was not added to the staging area.
 2. Don't use this command if you don't add a file with ```update-cache``` command before, because this corrupt the index and when re execute this command or update command, throw an error.
+
+### write-tree
+#### Why is this command?
+This command is the ancestor of ```git commit``` in normal use, but as exact ancestro, is of ```git write-tree``` command, had the same fuction of write in ```.dircache/objects/``` a object of **tree** type.
+
+### Usage
+```sh
+./write-tree
+```
+No had any parameters
+
+### Considerations and curiosities
+1. This not create a commit itself, this only create and "return" they tree hash, to create a commit you could be use after this, the ```commit-tree``` command.
+2. This based to the fs than staging area was based, so you can't make like now, creating a virtual index and orphan object.
