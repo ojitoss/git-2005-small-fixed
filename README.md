@@ -25,6 +25,13 @@ In this point yo can move the executable files to your bin folder to can execute
 
 ## Commands guide:
 Since the original version of git, the README don't had info about how use it (was only internals and desing to the future VCS/SMC), this is the guide of how use every command, considerations and some curiosities against current git.
+1. [init-db](#init-db)
+2. [update-cache](#update-cache)
+3. [show-diff](#show-diff)
+4. [write-tree](#write-tree)
+5. [commit-tree](#commit-tree)
+6. [cat-file](#cat-file)
+7. [read-tree](#read-tree)
 
 ### init-db
 #### Why is this command?
