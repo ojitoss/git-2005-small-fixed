@@ -73,4 +73,4 @@ No had any parameters
   - ```state```: this could be had two values:
     - ```Ok```: this means the file was correclty added and prepare to commit write a tree.
     - ```[rare bytes sequence]```: this meaning the file was not added to the staging area.
-2. Don't use this command if you add a file with ```update-cache``` command before, because this corrupt the index and when re execute this command or update command, throw an error.
+2. Don't use this command if you don't add a file with ```update-cache``` command before, because this corrupt the index and when re execute this command or update command, throw an error.
