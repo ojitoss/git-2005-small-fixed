@@ -8,6 +8,12 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 
 *real "README" file created for ```Linus``` since 2005, was the [README](./README) file in this same repository.*
 
+## Table of main contents
+- [Changes](#small-changes-was-maked)
+- [How to use](#how-to-use)
+- [Command Guide](#command-guide)
+- [Internals](#internals)
+
 ## Small changes was maked:
 **Files added:** 
 - ```.gitignore``` just to ignore the files than compiler create and some posibles editor or systems temp files.
