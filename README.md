@@ -15,11 +15,11 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 - [Internals](#internals)
 
 ## Small changes was maked:
-**Files added:** 
+### Files added:
 - ```.gitignore``` just to ignore the files than compiler create and some posibles editor or systems temp files.
 - ```README.md``` this file, is just to clarify than the code isn't mine, and the changes was maked.
 
-**Code changes:**
+### Code changes:
 - Add the ```extern``` instruction for some structs of ```cache.h``` file.
 - Add libs and compiler compatibility options to ```Makefile``` file.
 - Comment lines than clean text of env things than cause the ```commit-tree``` command throw a *Segmention fault* error. (This is just a fast patch, probably after could be correct resolved)
