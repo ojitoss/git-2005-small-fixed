@@ -26,7 +26,7 @@ In this point yo can move the executable files to your bin folder to can execute
 ## Commands guide:
 Since the original version of git, the README don't had info about how use it (was only internals and desing to the future VCS/SMC), this is the guide of how use every command, considerations and some curiosities against current git.
 
-### ```init-db```
+### init-db
 #### Why is this command?
 This command is the ancestor of ```git init``` command, had the same fuction of just make hidden folder with the info of the repo and objects.
 
@@ -40,3 +40,18 @@ No had any parameters
 1. The folder if this version, no had ```.git``` name, instead was called as ```.dircache```
 2. This only create the ```objects``` folder and ```index``` file.
 3. The ```objects``` folder create the 255 folders inside when executed the command (names in hexa of groups of four bits like 00..ff), instead like current git, than make this folders as lazy when hash objects was generated. *I guess this is just because Linus want a funcional MVP and not add lazy instructions in the other commands*
+
+### update-cache
+#### Why is this command?
+This command is the ancestor of ```git add <file>``` command, had the same fuction of register the file in the staging area (```.dircache/index```) file.
+
+### Usage
+```sh
+./update-cache <file>
+```
+- ```file:``` This argument was to (based in your current directory) add a specific file to staging area.
+
+### Considerations and curiosities
+1. Can't use '.' in ```file``` arg to save every file in the directory to the staging area.
+2. Only can be pasa one file per file, not like now can pass many files or folders as you need.
+3. Can't pass folders.
