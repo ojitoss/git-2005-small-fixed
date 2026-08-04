@@ -168,7 +168,15 @@ The [README](./README) file of Linus Torvalds, was focused in the desing itself 
 - **Why contains**: The content of the file, only this, nothing about data.
 - **Structure in dircache**:
 ```
-blob <size un ASCII>\0<content>
+blob <size in ASCII>\0<content>
 ```
-- **Trees**: When you use [write-tree](#write-tree) command, use the current staging area to create this type of object than contains a list of every file, his root (not name, because in this version only create a tree object in root directory and not sub-trees) his permissions and blob hash.
+#### Trees
+- **Command than create it**: [write-tree](#write-tree)
+- **Why contains**: Files status permission, root (not name because in this version only create a tree object in root directory and not sub-trees), and target to The blob
+- **Structure in dircache**:
+```
+tree <size in ASCII>\0(List of files root info, had this format:
+<permission[6 chars]> <file root> <blob hash[40 chars]
+)
+```
 - **Commit**: When you use [commit-tree](#commit-tree) command, use the tree object passed as first arg and (if pass it) a parent prop (in this version can only contain one parent), also had a info about author, date, and message description.
