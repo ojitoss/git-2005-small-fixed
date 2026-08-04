@@ -55,3 +55,22 @@ This command is the ancestor of ```git add <file>``` command, had the same fucti
 1. Can't use '.' in ```file``` arg to save every file in the directory to the staging area.
 2. Only can be pasa one file per file, not like now can pass many files or folders as you need.
 3. Can't pass folders.
+
+### show-diff
+#### Why is this command?
+This command is the ancestor of ```git status``` command, had the same fuction of show in console the current state of staging area (```.dircache/index```).
+
+### Usage
+```sh
+./show-diff
+```
+No had any parameters
+
+### Considerations and curiosities
+1. The register was displayed with this shape:
+```[file name]: [state]```
+  - ```file name```: was the name of the root of FILE (not per folder).
+  - ```state```: this could be had two values:
+    - ```Ok```: this means the file was correclty added and prepare to commit write a tree.
+    - ```[rare bytes sequence]```: this meaning the file was not added to the staging area.
+2. Don't use this command if you add a file with ```update-cache``` command before, because this corrupt the index and when re execute this command or update command, throw an error.
