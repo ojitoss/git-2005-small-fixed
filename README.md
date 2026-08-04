@@ -174,6 +174,15 @@ The [README](./README) file of Linus Torvalds, was focused in the desing itself 
 ```
 blob <size in ASCII>\0<content>
 ```
+exmaple of file with this content:
+```
+Hello world, i'm a blob object of git!
+```
+to
+```
+blob 38\0Hello world, i'm blob object of git!
+```
+
 #### Trees
 - **Creator**: [write-tree](#write-tree)
 - **Content**: Files status permission, root (not name because in this version only create a tree object in root directory and not sub-trees), and target to The blob
