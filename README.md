@@ -214,5 +214,24 @@ parent <hash[40 chars]
 )
 author <author-name> <<author-email>> <date>
 commiter <commiter-name> <<commiter-email> <date>
+
 <message>
+```
+example of a commit with of this [commit-tree](#commit-tree) execution:
+```sh
+set COMITTER_NAME="anony"
+
+set COMITTER_EMAIL="anony@mail.com"
+
+echo "Hello world" | ./commit-tree abc15bc... -p bbaa55c... 7ffabac...
+```
+to
+```
+commit 190\0tree abc15bc...
+parent bbaa55c...
+parent 7ffabac...
+author anony <anony@mail.com> 100292
+commiter anony <anony@mail.com> 100292
+
+Hello world
 ```
