@@ -168,15 +168,15 @@ The [README](./README) file of Linus Torvalds, was focused in the desing itself 
 
 ### Objects Types
 #### Blobs
-- **Command than create it**: [update-cache](#update-cache)
-- **Why contains**: The content of the file, only this, nothing about data.
+- **Creator**: [update-cache](#update-cache)
+- **Content**: The content of the file, only this, nothing about data.
 - **Structure in dircache**:
 ```
 blob <size in ASCII>\0<content>
 ```
 #### Trees
-- **Command than create it**: [write-tree](#write-tree)
-- **Why contains**: Files status permission, root (not name because in this version only create a tree object in root directory and not sub-trees), and target to The blob
+- **Creator**: [write-tree](#write-tree)
+- **Content**: Files status permission, root (not name because in this version only create a tree object in root directory and not sub-trees), and target to The blob
 - **Structure in dircache**:
 ```
 tree <size in ASCII>\0(List of files root info, had this format:
@@ -184,8 +184,8 @@ tree <size in ASCII>\0(List of files root info, had this format:
 )
 ```
 #### Commit 
-- **Command than create it**: [commit-tree](#commit-tree)
-- **Why contains**: Target to the tree, the parents, info about author and commit msg.
+- **Creator**: [commit-tree](#commit-tree)
+- **Content**: Target to the tree, the parents, info about author and commit msg.
 - **Structure in dircache**:
 ```
 commit <size in ASCII>\0tree <hash[40 chars]>
