@@ -1,4 +1,3 @@
-
 # Git first version (un official) repo
 
 *DISCLAIMER: The original repository of Linus Torvalds, don't contain a LICENSE file, so i can't put a LICENSE, bit was Open source anyway and i add this to avoid any kind of "license troll"*
@@ -9,7 +8,7 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 
 *real "README" file created for ```Linus``` since 2005, was the [README](./README) file in this same repository.*
 
-## Small chances was maked:
+## Small changes was maked:
 **Files added:** 
 - ```.gitignore``` just to ignore the files than compiler create and some posibles editor or systems temp files.
 - ```README.md``` this file, is just to clarify than the code isn't mine, and the changes was maked.
@@ -23,7 +22,6 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 ```sh
 git clone https://github.com/ojitoss/git-2005-small-fixed && cd git-2005-small-fixed && make
 ```
-
 In this point yo can move the executable files to your bin folder to can execute globaly, but also was added (and ignored by .gitignore) the ```test``` folder if you don't want hace it globaly because only want test it a bit. (of curse, remember to use the relative path if use the ```test``` folder, like: ```./../init-db```)
 
 ## Commands guide:
@@ -40,13 +38,13 @@ Since the original version of git, the README don't had info about how use it (w
 #### Why is this command?
 This command is the ancestor of ```git init``` command, had the same fuction of just make hidden folder with the info of the repo and objects.
 
-### Usage
+#### Usage
 ```sh
 ./init-db
 ```
 No had any parameters
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. The folder if this version, no had ```.git``` name, instead was called as ```.dircache```
 2. This only create the ```objects``` folder and ```index``` file.
 3. The ```objects``` folder create the 255 folders inside when executed the command (names in hexa of groups of four bits like 00..ff), instead like current git, than make this folders as lazy when hash objects was generated. *I guess this is just because Linus want a funcional MVP and not add lazy instructions in the other commands*
@@ -55,13 +53,13 @@ No had any parameters
 #### Why is this command?
 This command is the ancestor of ```git add <file>``` command, had the same fuction of register the file in the staging area (```.dircache/index```) file.
 
-### Usage
+#### Usage
 ```sh
 ./update-cache <file>
 ```
 - ```file```: This argument was to (based in your current directory) add a specific file to staging area.
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. Can't use '.' in ```file``` arg to save every file in the directory to the staging area.
 2. Only can be pasa one file per file, not like now can pass many files or folders as you need.
 3. Can't pass folders.
@@ -70,13 +68,13 @@ This command is the ancestor of ```git add <file>``` command, had the same fucti
 #### Why is this command?
 This command is the ancestor of ```git status``` command, had the same fuction of show in console the current state of staging area (```.dircache/index```).
 
-### Usage
+#### Usage
 ```sh
 ./show-diff
 ```
 No had any parameters
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. The register was displayed with this shape:
 ```[file name]: [state]```
   - ```file name```: was the name of the root of FILE (not per folder).
@@ -89,13 +87,13 @@ No had any parameters
 #### Why is this command?
 This command is the ancestor of ```git commit``` in normal use, but as exact ancestro, is of ```git write-tree``` command, had the same fuction of write in ```.dircache/objects/``` a object of **tree** type.
 
-### Usage
+#### Usage
 ```sh
 ./write-tree
 ```
 No had any parameters
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. This not create a commit itself, this only create and "return" they tree hash, to create a commit you could be use after this, the [commit-tree](#commit-tree) command.
 2. This based to the fs than staging area was based, so you can't make like now, creating a virtual index and orphan object.
 
@@ -103,7 +101,7 @@ No had any parameters
 #### Why is this command?
 This command is the ancestor of ```git commit``` command, had the same fuction of create a object of **commit** type.
 
-### Usage
+#### Usage
 ```sh
 echo <message> | ./commit-tree <tree-hash> [-p <tree-hash>]
 ```
@@ -112,7 +110,7 @@ echo <message> | ./commit-tree <tree-hash> [-p <tree-hash>]
 - ```parent```: this flag target and add to the commit a parent prop.
   - ```tree-hash```: this sub-arg was to indicate was hash was a parent of this commit.
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. You need to set a global env or shell variables before use this command:
 ```sh
 set GIT_AUTHOR=<name>
@@ -125,13 +123,13 @@ set GIT_EMAIL=<email>
 #### Why is this command?
 This command is the ancestor of ```git cat-file``` command, had the same fuction of display a content of a object storage in ```.dircache/objects/```.
 
-### Usage
+#### Usage
 ```sh
 ./cat-file <object-hash>
 ```
 - ```object-hash```: this arg you pass the commit of a EXISTING object in your dircache.
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. Against current cat-file command, not throw content directly, the original create a file with this structure as name: ```temp_git_file_XXXXXX``` and you be see it with a ```cat``` command or variants of file readers.
 2. This files was never cleaned for git, you could be manualy, remove it, preference use: ```rm -rf temp_git_file_*``` to remove all with one command.
 
@@ -139,13 +137,13 @@ This command is the ancestor of ```git cat-file``` command, had the same fuction
 #### Why is this command?
 This command is the ancestor of ```git ls-tree``` command, had the same fuction of display a structure of, name, permiss, and blob hash of the tree fields.
 
-### Usage
+#### Usage
 ```sh
 ./read-tree <tree-hash>
 ```
 - ```tree-hash```: this arg refer to the hash of the tree you can check.
 
-### Considerations and curiosities
+#### Considerations and curiosities
 1. Instead of [cat-file](#cat-file) command, this command show in console directly.
 2. the structure of how show it is:
 ```[file permiss] [name file and root] ([blob hash])```
