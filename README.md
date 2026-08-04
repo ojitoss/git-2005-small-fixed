@@ -11,7 +11,7 @@ This repository is just a fixed version of [First commit of git by Linus Torvald
 ## Table of main contents
 - [Changes](#small-changes-was-maked)
 - [How to use](#how-to-use)
-- [Command Guide](#command-guide)
+- [Commands Guide](#commands-guide)
 - [Internals](#internals)
 
 ## Small changes was maked:
